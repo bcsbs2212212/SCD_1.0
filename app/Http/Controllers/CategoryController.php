@@ -2,27 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function men()
-    {
-        return view('categories.men');
-    }
-
-    public function women()
-    {
-        return view('categories.women');
-    }
 
     public function kids()
     {
-        return view('categories.kids');
+        $products = Product::where('category', 'kids')->get();
+        return view('categories.kids', compact('products'));
     }
 
-    public function accessories()
+    // Method for Men
+    public function men()
     {
-        return view('categories.accessories');
+        $products = Product::where('category', 'men')->get();
+        return view('categories.men', compact('products'));
     }
+
+    // Method for Women
+    public function women()
+    {
+        $products = Product::where('category', 'women')->get();
+        return view('categories.women', compact('products'));
+    }
+    
 }

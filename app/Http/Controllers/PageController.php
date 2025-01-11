@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index()
+    public function home()
     {
-        return view('index');
+
+        $products = Product::where('category', 'kids')->get();
+        return view('index', compact('products'));
     }
 
     public function about()
@@ -18,7 +21,8 @@ class PageController extends Controller
 
     public function products()
     {
-        return view('products');
+        $products = Product::where('category', 'kids')->get();
+        return view('products', compact('products'));
     }
     public function singleproducts()
     {

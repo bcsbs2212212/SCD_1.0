@@ -29,7 +29,7 @@
                         <li><a href="{{ route('categories.men') }}">Men’s Shopping</a></li>
                         <li><a href="{{ route('categories.women') }}">Women’s Shopping</a></li>
                         <li><a href="{{ route('categories.kids') }}">Kid's Shopping</a></li>
-                        <li><a href="{{ route('categories.accessories') }}">Accessories's Shopping</a></li>
+                       
                     </ul>
                 </div>
                 <div class="col-lg-3">
